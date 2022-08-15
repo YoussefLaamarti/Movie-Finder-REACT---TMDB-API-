@@ -34,7 +34,13 @@ function Home({ setOneMovie }) {
   //this function if a search term is stored it will return resutls for it
   var Searching;
   if (SearchResult == "") {
-    Searching = <Rows popular={popular} highestRating={highestRating} />;
+    Searching = (
+      <Rows
+        popular={popular}
+        highestRating={highestRating}
+        setOneMovie={setOneMovie}
+      />
+    );
   } else {
     Searching = (
       <Results
@@ -53,7 +59,9 @@ function Home({ setOneMovie }) {
       {/* Hoome Content */}
       <section className="Container-home-rows">
         <div className="row-container">
-          <SearchBar setSearchResult={setSearchResult} />
+          <div className="searchbar-container">
+            <SearchBar setSearchResult={setSearchResult} />
+          </div>
           {Searching}
         </div>
       </section>

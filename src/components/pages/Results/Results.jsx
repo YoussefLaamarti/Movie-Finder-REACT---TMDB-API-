@@ -20,24 +20,27 @@ function Results({ SearchResult, Base_url, setOneMovie }) {
   };
   const handleClick = (movie) => {
     setOneMovie(movie);
-    console.log(movie);
   };
   return (
     <div className="row-result">
-      {foundMovie.map((movie) => (
-        <div className="row-movies">
-          <Link to="/movie">
-            ;
-            <img
-              key={movie.id}
-              className="test"
-              src={`${Img_url}${movie.poster_path}`}
-              alt="image"
-              onClick={() => handleClick(movie)}
-            />
-          </Link>
-        </div>
-      ))}
+      {foundMovie
+        .filter(
+          (foundMovie) =>
+            foundMovie.poster_path !== null && foundMovie.overview !== ""
+        )
+        .map((movie) => (
+          <div className="row-movies">
+            <Link to="/movie">
+              <img
+                key={movie.id}
+                className="card"
+                src={`${Img_url}${movie.poster_path}`}
+                alt="image"
+                onClick={() => handleClick(movie)}
+              />
+            </Link>
+          </div>
+        ))}
     </div>
   );
 }
