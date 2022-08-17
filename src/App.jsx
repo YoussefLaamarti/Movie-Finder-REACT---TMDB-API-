@@ -1,10 +1,6 @@
 import "./App.css";
 import Home from "./components/pages/Home/Home";
 import OneResult from "./components/pages/OneResult/OneResult";
-import "./css/Home.css";
-import "./css/Oneresult.css";
-import "./css/Moviefilter.css";
-import "./css/FilterResults.css";
 import "react-toastify/dist/ReactToastify.css";
 
 import React, { useState } from "react";

@@ -1,5 +1,4 @@
 import React from "react";
-import "../../css/Navbar.css";
 function Navbar({ setGenre }) {
   const handleClick = (e) => {
     setGenre(e);

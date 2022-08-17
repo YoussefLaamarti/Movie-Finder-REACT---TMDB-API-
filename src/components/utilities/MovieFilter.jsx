@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import requests from "../../requests";
 import axios from "axios";
+import "../../css/Moviefilter.css";
 
 function MovieFilter({ setGenre, setYear }) {
   useEffect(() => {
