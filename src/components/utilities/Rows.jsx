@@ -1,7 +1,7 @@
 import React from "react";
 import Row from "./Row";
 
-function Rows({ highestRating, popular, setOneMovie }) {
+function Rows({ highestRating, popular, setOneMovie, dayTrend, WeekTrend }) {
   return (
     <>
       <div className="row">
@@ -15,6 +15,20 @@ function Rows({ highestRating, popular, setOneMovie }) {
         <Row
           title={"Highest Rating Movies"}
           object={highestRating}
+          setOneMovie={setOneMovie}
+        />
+      </div>
+      <div className="row">
+        <Row
+          title={"Day Trending Movies"}
+          object={dayTrend}
+          setOneMovie={setOneMovie}
+        />
+      </div>
+      <div className="row">
+        <Row
+          title={"Weekly Trending Movies"}
+          object={WeekTrend}
           setOneMovie={setOneMovie}
         />
       </div>

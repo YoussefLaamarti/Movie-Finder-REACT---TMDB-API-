@@ -39,6 +39,22 @@ function Results({ SearchResult, Base_url, setOneMovie }) {
                 onClick={() => handleClick(movie)}
               />
             </Link>
+            <div className="title-date">
+              <a
+                href="/movie"
+                onClick={() => handleClick(movie)}
+                className="row-movies-title"
+              >
+                {movie.original_title} &nbsp;
+              </a>
+              <a
+                href="/movie"
+                onClick={() => handleClick(movie)}
+                className="date"
+              >
+                {movie.release_date.slice(0, 4)}
+              </a>
+            </div>
           </div>
         ))}
     </div>

@@ -31,8 +31,8 @@ height: 90%;
 .movie-genres{
     min-width: 12%;
     height: 50%;
-    background-color: var(--gray);   
-     border-radius: 10px;
+    background-color: var(--yellow) ;     
+    border-radius: 10px;
      margin-top: 15px;
      text-align: center;
      padding: 7px;
@@ -42,8 +42,8 @@ height: 90%;
 .movie-scores{
     min-width: 8%;
     height: 80%;
-    background-color: var(--gray);
-    border-radius: 10px;
+    background-color: var(--yellow) ; 
+        border-radius: 10px;
     text-align: center;
     margin-top: 5px;
     padding: 12px;
@@ -94,7 +94,7 @@ height: 90%;
 .section2 span{
     font-family: 'Asap', sans-serif;
     font-size: 13px;
-    color: var(--yellow);
+    color: var(--gray);
 
 }
 .section3{
@@ -110,7 +110,6 @@ height: 90%;
     color: white;
 }
 .section4{
-    
     width: 100%;
     height: 4rem;
     background-color: var(--black);
@@ -121,6 +120,56 @@ justify-content: space-around;}
     font-size: 13px;
     color: var(--yellow);
    }
+   .section5{
+    display: flex;
+    width: 100%;
+    height:3rem;
+    text-align: center;
+    padding: 12px;
+   }
+   .section5 span{
+    font-family: 'Asap', sans-serif;
+    font-size: 18px;
+    color: var(--yellow);
+   }
+   .section5 a{
+    font-family: 'Asap', sans-serif;
+    font-size: 16px;
+    color: var(--yellow);
+    border: 2px solid var(--yellow);
+    padding: 5px ;
+    position: absolute;
+    cursor: pointer;
+    text-decoration: none;
+   }
+   .section5 a:hover{
+    background-color: var(--yellow);
+    transition: 1s;
+    color: var(--gray);
+   }
+   .section5 a:not(hover){
+    background-color: var(--black);
+    transition: 1s;
+    color: var(--yellow);
+    
+   }
+   .trailer{
+    width: 12rem;
+height: 2rem;
+margin: auto;
+border: 2px solid yellow; 
+border-radius: 5px;
+padding: 2px;  }
+.trailer:hover{
+    transform: scale(1.10);
+    transition: 1s;
+    background-color: var(--red100);
+    cursor: pointer;
+}
+.trailer:not(hover){
+    transform: scale(1);
+    transition: 1s;
+}
    @media screen and (max-width:1400px) {
     .movie-scores{
         height: 60%;
@@ -152,7 +201,7 @@ justify-content: space-around;}
       
      
        margin-top: 15px;
-        padding: 0px;
+        padding: 7px;
     
     }
     .section1 span{
@@ -168,6 +217,11 @@ justify-content: space-around;}
         width: 75%;
 
     }
+    .section5 a{
+ 
+        font-size: 13px;
+     
+       }
    }
    @media screen and (max-width:800px) {
     .movie-scores{
@@ -175,7 +229,7 @@ justify-content: space-around;}
       
      
        margin-top: 16px;
-        padding: 0px;
+        padding: 7px;
     
     }
     .section1 span{
@@ -198,7 +252,20 @@ justify-content: space-around;}
         margin: auto;
         border-radius: 30px;
     }
-    
+    .section5 a{
+ 
+        font-size: 10px;
+     
+       }
+       .section5 span{
+        
+        font-size: 14px;
+      
+       }
+       .trailer{
+        width: 8rem;
+    height: 2rem;
+    padding: 4px;  }
    }
 
    @media screen and (max-width:600px) {
@@ -250,8 +317,24 @@ justify-content: space-around;}
         margin: auto;
         border-radius: 30px;
     }
+    .section5 a{
+ 
+        font-size: 7px;
+     
+       }
+    .section5 span{
+        
+        font-size: 11px;
+      
+       }
+       .trailer{
+        width: 5rem;
+    height: 2rem;
+    padding: 4px;  }
+   
     
    }
+ 
    @media screen and (max-width:400px) {
     .movie-scores{
        
@@ -280,8 +363,8 @@ justify-content: space-around;}
        }
        .section2 span{
         
-        font-size: 
-        10px;
+        font-size: 10px;
+        color: var(--yellow);
         
        }
        .oneResult-content img{
@@ -298,5 +381,22 @@ margin-bottom: 20px;    }
     min-height: 6rem;
     flex-wrap: wrap;
 }
+
+.section5 a{
+ 
+    font-size: 5px;
+ 
+   }
+.section5 span{
+    
+    font-size: 8px;
+  
+   }
+   .trailer{
+    width: 4rem;
+height: 2rem;
+padding: 3px;  
+border-radius: 15px;}
+
    }
    

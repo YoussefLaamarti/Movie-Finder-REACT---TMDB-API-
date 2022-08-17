@@ -1,0 +1,46 @@
+.pagination {
+    font-family: 'Asap', sans-serif;
+    font-size: 15px;
+    margin-bottom: 1%;
+    
+    display: flex;
+    
+}
+
+  
+  .pagination a {
+    color: var(--yellow);
+    background-color: var(--gray);
+    
+    padding: 8px 13px;
+    text-decoration: none;
+    transition: background-color .3s;
+    cursor: pointer;
+    height: 2.2rem;
+    margin-left: 10px;
+  }
+  .pagination a:hover {
+   transform: scale(1.1);
+   transition: 1s;
+  }
+  .pagination-text{
+    padding: 6px;
+    border: none;
+    font-size: 17px;
+    height: 35px;
+    width: 2.3rem;
+    margin-left: 12px;
+    background: #dadada;
+    border-radius: 2px;
+  }
+  .pagination div {
+    color: var(--yellow);
+    background-color: var(--gray);
+    float: left;
+    padding: 9px 13px;
+    text-decoration: none;
+    transition: background-color .3s;
+    cursor: pointer;
+    height: 2.2rem;
+    margin-left: 10px;
+  }

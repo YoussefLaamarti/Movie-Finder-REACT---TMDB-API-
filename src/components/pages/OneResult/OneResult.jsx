@@ -1,23 +1,40 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-
+import YouTube from "react-youtube";
+import movieTrailer from "movie-trailer";
 function OneResult({ OneMovie }) {
   const Img_url = "https://image.tmdb.org/t/p/original";
   const Base_url = "https://api.themoviedb.org/3";
   const APIKEY = "d92df06e8d58a85b55771aa53444735e";
-
+  const opts = {
+    height: "390",
+    width: "100%",
+    playerVars: {
+      autoplay: 1,
+    },
+  };
   useEffect(() => {
     fetchGenres();
-    console.log(MovieGenres);
   }, []);
   const [MovieGenres, setMovieGenres] = useState([]);
-
+  const [trailerUrl, setTrailerUrl] = useState("");
   const fetchGenres = async () => {
     const response = await axios.get(
       ` ${Base_url}/movie/${OneMovie.id}?api_key=${APIKEY}`
     );
-
     setMovieGenres(response.data);
+  };
+  const handleClick = (movieName) => {
+    if (trailerUrl) {
+      setTrailerUrl("");
+    } else {
+      movieTrailer(movieName)
+        .then((url) => {
+          const urlParams = new URLSearchParams(new URL(url).search);
+          setTrailerUrl(urlParams.get("v"));
+        })
+        .catch((error) => console.log(error));
+    }
   };
 
   return (
@@ -44,9 +61,21 @@ function OneResult({ OneMovie }) {
                 <span>Status : {MovieGenres.status} </span>
               </div>
             </section>
+
+            {trailerUrl && <YouTube videoId={trailerUrl} opts={opts} />}
+
             <section className="section1">
               <div className="movie-title">
                 <span>{OneMovie.original_title}</span>
+              </div>
+            </section>
+            <section className="section5 ">
+              <a href="/">RETURN HOME</a>
+              <div
+                onClick={() => handleClick(OneMovie.original_title)}
+                className="trailer"
+              >
+                <span>Watch Trailer</span>
               </div>
             </section>
 
@@ -67,7 +96,6 @@ function OneResult({ OneMovie }) {
                 </div>
               </div>
             </section>
-
             <section className="section3">
               <div className="overview">
                 <span>{MovieGenres.overview}</span>

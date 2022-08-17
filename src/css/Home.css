@@ -91,17 +91,24 @@ max-width: 80rem;
 .row-movies{
     margin-top: 8px;
     min-width: 200px;
-    height: 310px;
-    padding: 0px;
+    height: 350px;
     
+    
+}
+.filter-paddding{
+    padding: 11px;  
 }
 .row-flex{
     display: flex;
     gap: 1rem;
+    transition: 2s;
+    
 }
+
 .card{
+   
     width: 100%;
-    height: 100%;
+    height: 90%;
 }
 .card:hover{
     transform: scale(1.07);
@@ -137,6 +144,47 @@ max-width: 80rem;
     min-height: 700px;
     margin: auto;
 }
+.row-movies-title{
+    color: var(--yellow);
+    font-size: 15px;
+    font-family: 'Asap', sans-serif;
+    text-decoration: none;
+
+}
+.date{
+    color: rgb(206, 205, 205);
+    font-family: 'Asap', sans-serif;
+    font-size: 15px;
+    text-decoration: none;
+}
+
+.Sliderrr{
+    color: var(--yellow);
+    background-color: var(--gray);
+    
+    padding: 5px 14px;
+    text-decoration: none;
+    transition: background-color .3s;
+    cursor: pointer;
+    height: 2.2rem;
+    font-family: 'Asap', sans-serif;
+    font-size: 15px;
+    margin-bottom: 1%;
+    border-radius: 20px;
+    border: 2px solid var(--yellow);
+
+}
+.Sliderrr:hover{
+   
+    transform: scale(1.05);
+    transition: 0.5s;
+}
+.Sliderrr-container{
+display: flex;
+float: right;
+
+}
+
 @media screen and (max-width:1000px) {
 
     .row-result{
