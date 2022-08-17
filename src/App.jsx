@@ -5,9 +5,10 @@ import "./css/Home.css";
 import "./css/Oneresult.css";
 import "./css/Moviefilter.css";
 import "./css/FilterResults.css";
+import "react-toastify/dist/ReactToastify.css";
 
 import React, { useState } from "react";
-import Navbar from "./components/layout/Navbar";
+import { ToastContainer } from "react-toastify";
 
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 export const TestContext = React.createContext();
@@ -22,6 +23,18 @@ function App() {
           <Route path="/categorie" element={<OneResult />} />
         </Routes>
       </Router>
+      <ToastContainer
+        toastStyle={{ backgroundColor: "black", color: "white" }}
+        position="top-center"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+      />
     </div>
   );
 }

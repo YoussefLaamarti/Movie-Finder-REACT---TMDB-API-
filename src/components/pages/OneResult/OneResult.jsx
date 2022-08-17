@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import YouTube from "react-youtube";
 import movieTrailer from "movie-trailer";
+import { toast } from "react-toastify";
+
 function OneResult({ OneMovie }) {
   const Img_url = "https://image.tmdb.org/t/p/original";
   const Base_url = "https://api.themoviedb.org/3";
@@ -33,7 +35,7 @@ function OneResult({ OneMovie }) {
           const urlParams = new URLSearchParams(new URL(url).search);
           setTrailerUrl(urlParams.get("v"));
         })
-        .catch((error) => console.log(error));
+        .catch((error) => toast.error("Trailer Not Found !"));
     }
   };
 
@@ -41,11 +43,20 @@ function OneResult({ OneMovie }) {
     <>
       <div>
         <div className="oneResult-content">
-          <img
-            key={OneMovie.id}
-            src={`${Img_url}${OneMovie.backdrop_path}`}
-            alt="image"
-          ></img>
+          {OneMovie.backdrop_path ? (
+            <img
+              key={OneMovie.id}
+              src={`${Img_url}${OneMovie.backdrop_path}`}
+              alt="image"
+            ></img>
+          ) : (
+            <img
+              key={OneMovie.id}
+              src={`https://palmares.lemondeduchiffre.fr/images/joomlart/demo/default.jpg`}
+              alt="image"
+            ></img>
+          )}
+
           <div className="movie-infos">
             <section className="section4">
               <div className="movie-moreinfos">

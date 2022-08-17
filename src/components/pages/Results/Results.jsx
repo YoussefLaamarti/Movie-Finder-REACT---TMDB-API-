@@ -3,6 +3,7 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import requests from "../../../requests";
+import { toast } from "react-toastify";
 
 function Results({ SearchResult, Base_url, setOneMovie }) {
   const [foundMovie, setFoundMovie] = useState([]);
@@ -16,7 +17,13 @@ function Results({ SearchResult, Base_url, setOneMovie }) {
     const response = await axios.get(
       ` ${Base_url}${requests.fetchMovie}${SearchResult}`
     );
-    setFoundMovie(response.data.results);
+    if (response.data.total_pages > 0) {
+      setFoundMovie(response.data.results);
+    } else {
+      toast.error("Movie not Found !");
+      //setting the movies to empty
+      setFoundMovie([]);
+    }
   };
   const handleClick = (movie) => {
     setOneMovie(movie);

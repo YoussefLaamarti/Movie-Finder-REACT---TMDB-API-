@@ -33,10 +33,11 @@ function Row({ title, object, setOneMovie }) {
             ❮
           </div>
         )}
-
-        <div className="Sliderrr" onClick={() => MoveRight(SliderAdd)}>
-          ❯
-        </div>
+        {SliderAdd < 3210 && (
+          <div className="Sliderrr" onClick={() => MoveRight(SliderAdd)}>
+            ❯
+          </div>
+        )}
       </div>
       <h1> {title}</h1>
 
