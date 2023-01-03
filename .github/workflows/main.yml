@@ -13,4 +13,4 @@ jobs:
       - name: Install dependencies
         run: npm install
       - name: Deploy
-        run: nohup npm run dev -- --host 0.0.0.0 &
+        run: bash server.sh
