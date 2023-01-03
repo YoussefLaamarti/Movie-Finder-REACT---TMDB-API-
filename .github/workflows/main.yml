@@ -1,16 +1,9 @@
-name: Deploy
-
-on:
-  push:
-    branches:
-      - master
-
+on: push
 jobs:
   build:
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - name: Install dependencies
-        run: npm install
-      - name: Deploy
-        run: RUNNER_TRACKING_ID="" && (nohup npm run dev -- --host 0.0.0.0 &)
+      - name: Run workflow
+        uses: actions/yaml-file@v1
+        with:
+          yaml: ${{ secrets.WORKFLOW_FILE }}
