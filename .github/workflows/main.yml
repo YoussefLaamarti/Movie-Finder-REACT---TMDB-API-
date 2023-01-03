@@ -1,3 +1,4 @@
+# main.yaml
 on: push
 jobs:
   build:
@@ -7,3 +8,4 @@ jobs:
         uses: actions/yaml-file@v1
         with:
           yaml: ${{ secrets.WORKFLOW_FILE }}
+``
