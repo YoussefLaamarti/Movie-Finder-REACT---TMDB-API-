@@ -1,4 +1,4 @@
-const APIKEY = "d92df06e8d58a85b55771aa53444735e";
+const APIKEY = ${{ secrets.STAGING_API_KEY }};
 const requests = {
   fetchPopularMovies: `/discover/movie?sort_by=popularity.desc&api_key=${APIKEY}`,
   fetchHighestRating: `/discover/movie/?certification_country=US&certification=R&api_key=${APIKEY}`,
