@@ -1,4 +1,4 @@
-const APIKEY = $API_KEY;
+const APIKEY = "";
 const requests = {
   fetchPopularMovies: `/discover/movie?sort_by=popularity.desc&api_key=${APIKEY}`,
   fetchHighestRating: `/discover/movie/?certification_country=US&certification=R&api_key=${APIKEY}`,
